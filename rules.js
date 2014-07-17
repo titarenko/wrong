@@ -2,7 +2,7 @@ var _ = require('lodash');
 var moment = require('moment');
 
 var email = function (value) {
-	if (!value.match(/^\S@\S$/)) {
+	if (!value.match(/^\S+@\S+$/)) {
 		return 'Неверный формат email адреса';
 	}
 };
