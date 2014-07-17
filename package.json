@@ -1,0 +1,26 @@
+{
+  "name": "wrong",
+  "version": "0.1.0",
+  "description": "Another JS object validator with focus on simplicity",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/titarenko/wrong.git"
+  },
+  "keywords": [
+    "validation",
+    "simple"
+  ],
+  "author": "Constantin Titarenko",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/titarenko/wrong/issues"
+  },
+  "homepage": "https://github.com/titarenko/wrong",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "moment": "^2.7.0",
+    "q": "^1.0.1"
+  }
+}
