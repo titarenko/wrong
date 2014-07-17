@@ -34,6 +34,10 @@ Validation function has following signature: `function (value, fieldName, wholeO
 
 Constructs array value validator by taking item validator as parameter.
 
+## existanceValidator(finder, [message])
+
+Constructs existance validator (value must be an ID of existing object).
+
 # License
 
 BSD

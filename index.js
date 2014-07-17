@@ -14,7 +14,21 @@ var arrayValidator = function (validator) {
 	};
 };
 
-var resolveValidator = function(alias) {
+var existanceValidator = function (find, message) {
+	message = message || 'Неверное значение поля';
+	return function (id) {
+		if (!_.isNumber(id) || _.isNaN(id)) {
+			return message;
+		}
+		return find.call(this, id).then(function (object) {
+			if (!object) {
+				return message;
+			}
+		});
+	}
+};
+
+var resolveValidator = function (alias) {
 	return rules[alias];
 };
 
@@ -62,5 +76,6 @@ var buildValidator = function (objectRules) {
 module.exports = {
 	rules: rules,
 	buildValidator: buildValidator,
-	arrayValidator: arrayValidator
+	arrayValidator: arrayValidator,
+	existanceValidator: existanceValidator
 };
