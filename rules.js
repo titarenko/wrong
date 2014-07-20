@@ -89,6 +89,12 @@ var positiveNumber = function (value) {
 	}
 };
 
+var requiredForExisting = function (value, name, data) {
+	if (data.id && _.isEmpty(value) && !_.isNumber(value) && !_.isBoolean(value)) {
+		return 'Обязательноe поле для существующего объекта';
+	}
+};
+
 module.exports = {
 	'email': email,
 	'not empty': notEmpty,
@@ -104,5 +110,6 @@ module.exports = {
 	'wmr': wmr,
 	'http method': httpMethod,
 	'date': date,
-	'positive number': positiveNumber
+	'positive number': positiveNumber,
+	'required if not new': requiredForExisting
 };
