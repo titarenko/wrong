@@ -45,7 +45,7 @@ var buildValidator = function (objectRules) {
 
 			if ((_.isNull(value) || _.isUndefined(value) ||
 				(_.isArray(value) || _.isString(value)) && _.isEmpty(value)) && 
-				validators.indexOf('required') === -1) {
+				aliases.indexOf('required') === -1) {
 				return [];
 			}
 
