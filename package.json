@@ -1,6 +1,6 @@
 {
   "name": "wrong",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Another JS object validator with focus on simplicity",
   "main": "index.js",
   "scripts": {},
