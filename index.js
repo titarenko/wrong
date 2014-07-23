@@ -17,7 +17,7 @@ var arrayValidator = function (validator) {
 var existanceValidator = function (find, message) {
 	message = message || 'Неверное значение поля';
 	return function (id) {
-		if (!_.isNumber(id) || _.isNaN(id)) {
+		if (!id) {
 			return message;
 		}
 		return find.call(this, id).then(function (object) {
