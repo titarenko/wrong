@@ -76,8 +76,12 @@ var httpMethod = function(value) {
 	}
 };
 
-var date = function (value) {
-	if (!_.isDate(value) || !moment(value).isValid()) {
+var date = function (value, name, data) {
+	if (value.match(/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}\+00/)) {
+		value = value.replace(' ', 'T').replace(/\.[\d\+]+$/, 'Z');
+		data[name] = value;
+	}
+	if (!_.isDate(value) && !moment(value).isValid()) {
 		return 'Поле должно содержать дату';
 	}
 };
