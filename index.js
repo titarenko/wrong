@@ -49,12 +49,15 @@ var buildValidator = function (objectRules) {
 				return [];
 			}
 
+			var hasError = false;
+
 			return aliases.map(function (alias) {
 				var validator = resolveValidator(alias);
 				if (!validator) {
 					throw new Error('Can\'t find validator ' + alias);
 				}
-				var result = validator.call(context, data[field], field, data);
+				var result = !hasError?validator.call(context, data[field], field, data):null;
+				hasError = hasError || Boolean(result);
 				return Q(result).then(function (error) {
 					if (error) {
 						return _.zipObject([field], [error]);
