@@ -3,7 +3,9 @@
   "version": "0.1.7",
   "description": "Another JS object validator with focus on simplicity",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- test -R spec -r should"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/titarenko/wrong.git"
@@ -22,5 +24,10 @@
     "lodash": "^2.4.1",
     "moment": "^2.7.0",
     "q": "^1.0.1"
+  },
+  "devDependencies": {
+    "should": "~4.0.4",
+    "mocha": "~1.21.5",
+    "istanbul": "~0.3.2"
   }
 }
